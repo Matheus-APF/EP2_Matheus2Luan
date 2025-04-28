@@ -5,7 +5,3 @@ def rolar_dados(vezes):
         dado = random.randint(1,6)
         dados.append(dado)
     return dados
-def guardar_dado(rolados,estoque,guarda):
-    dado = rolados[guarda]
-    estoque.append(dado)
-    return estoque
