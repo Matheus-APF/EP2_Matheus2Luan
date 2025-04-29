@@ -17,3 +17,9 @@ def remover_dado(rolados, estoque, i_guarda):
     del estoque[i_guarda]     # Remove do estoque
     rolados.append(dado)      # Adiciona novamente aos rolados
     return [rolados, estoque]
+
+def calcula_pontos_regra_simples(dados_rolados):
+    pontos = {}
+    for categoria in range(1, 7):   # Verifica dados em cada categoria
+        pontos[categoria] = dados_rolados.count(categoria) * categoria # Pontos: categoria * n° dados se enquadram nela(.count)
+    return pontos
