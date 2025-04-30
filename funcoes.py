@@ -160,3 +160,15 @@ def calcula_pontos_quina(dados):
 
     # Fim do fluxo --> Não há quina --> Retorna 0
     return 0
+
+#11
+def calcula_pontos_regra_avancada(dices):
+    pontuacoes = {}
+    pontuacoes["cinco_iguais"] = calcula_pontos_quina(dices)
+    pontuacoes["full_house"] = calcula_pontos_full_house(dices)
+    pontuacoes["quadra"] = calcula_pontos_quadra(dices)
+    pontuacoes["sem_combinacao"] = calcula_pontos_soma(dices)
+    pontuacoes["sequencia_alta"] = calcula_pontos_sequencia_alta(dices)
+    pontuacoes["sequencia_baixa"] = calcula_pontos_sequencia_baixa(dices)
+
+    return pontuacoes
