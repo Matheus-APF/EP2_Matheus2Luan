@@ -29,6 +29,7 @@ def calcula_pontos_soma(dados):
         soma += i
     return soma
 def calcula_pontos_sequencia_baixa(dados):
+    um = dois = tres = quatro = cinco = seis = False
     for i in dados:
         if i == 1:
             um =  True
