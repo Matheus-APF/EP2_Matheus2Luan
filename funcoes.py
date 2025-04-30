@@ -127,8 +127,13 @@ def calcula_pontos_quadra(dados):
         else:
             quadra[dado] += 1
     
-    #Testa se a quadra existe e retorna os resultados
-    if 4 in quadra.values():
+    #Testa se a quadra existe
+    for i in quadra.values():
+        if i >= 4:
+            quadraa = True
+    
+    #Retorna os Valores
+    if quadraa == True:
         for ndado,qntd in quadra.items():
             soma += ndado*qntd
         return soma
