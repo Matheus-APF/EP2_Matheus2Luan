@@ -95,7 +95,7 @@ def calcula_pontos_sequencia_alta(dados):
 
 # 8   
 def calcula_pontos_full_house(dados):
-    # Cria variaveis p modificar
+    # Cria variaveis p operações
     house = {}
     soma = 0
 
@@ -114,7 +114,7 @@ def calcula_pontos_full_house(dados):
     else:
         return 0
 
-#9
+# 9
 def calcula_pontos_quadra(dados):
     #Cria váriaveis
     soma = 0
@@ -140,3 +140,23 @@ def calcula_pontos_quadra(dados):
         return soma
     else:
         return 0
+
+# 10
+def calcula_pontos_quina(dados):
+    # Cria váriaveis p operações
+    quina = {}
+    
+   # Cria dicionário com ocorrência de cada face
+    for d in dados:
+        if d not in quina.keys():
+            quina[d] = 1
+        else:
+            quina[d] += 1
+    
+    # Verifica ocorrência de quina (valor ocorrencia >= 5)
+    for valor in quina.values():
+        if valor >= 5:
+            return 50
+
+    # Fim do fluxo --> Não há quina --> Retorna 0
+    return 0
