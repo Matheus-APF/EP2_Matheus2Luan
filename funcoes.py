@@ -122,7 +122,7 @@ def calcula_pontos_quadra(dados):
     
     #Conta a quantidade de cada dado
     for dado in dados:
-        if dado not in dados:
+        if dado not in quadra:
             quadra[dado] = 1
         else:
             quadra[dado] += 1
