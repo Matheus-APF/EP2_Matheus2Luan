@@ -30,14 +30,17 @@ def calcula_pontos_regra_simples(dados_rolados):
 
 # 5
 def calcula_pontos_soma(dados):
-    soma = 0
-    for i in dados:
+    soma = 0               #Váriavel que receberá a soma dos valores
+    for i in dados:        #Pega os valores na lista e faz a soma
         soma += i
     return soma
 
 # 6
 def calcula_pontos_sequencia_baixa(dados):
+    #Cria váriaveis 
     um = dois = tres = quatro = cinco = seis = False
+
+    #Detecta se os valores estão presentes na sequencia de dados enviada
     for i in dados:
         if i == 1:
             um =  True
@@ -51,6 +54,8 @@ def calcula_pontos_sequencia_baixa(dados):
             cinco = True
         else:
             seis = True
+
+    #Testa os casos de sequencia baixa
     if um == True and dois == True and tres == True and quatro == True:
         return 15
     elif dois == True and tres == True and quatro == True and cinco == True:
@@ -62,7 +67,10 @@ def calcula_pontos_sequencia_baixa(dados):
 
 # 7
 def calcula_pontos_sequencia_alta(dados):
+    #Cria Váriaveis
     um = dois = tres = quatro = cinco = seis = False
+
+    #Detecta se os valores estão presentes na sequencia de dados enviada
     for i in dados:
         if i == 1:
             um =  True
@@ -76,6 +84,8 @@ def calcula_pontos_sequencia_alta(dados):
             cinco = True
         else:
             seis = True
+
+    #Testa os casos de sequencia alta
     if um == True and dois == True and tres == True and quatro == True and cinco == True:
         return 30
     elif dois == True and tres == True and quatro == True and cinco == True and seis ==True:
@@ -100,6 +110,27 @@ def calcula_pontos_full_house(dados):
     # Verifica o caso full_house : duas faces distintas(len() == 2) repetidas 3 e 2 vezes(3 in and 2 in)
     valores = house.values()
     if len(valores) == 2 and (3 in valores and 2 in valores):
+        return soma
+    else:
+        return 0
+
+#9
+def calcula_pontos_quadra(dados):
+    #Cria váriaveis
+    soma = 0
+    quadra = {}
+    
+    #Conta a quantidade de cada dado
+    for dado in dados:
+        if dado not in dados:
+            quadra[dado] = 1
+        else:
+            quadra[dado] += 1
+    
+    #Testa se a quadra existe e retorna os resultados
+    if 4 in quadra.values():
+        for ndado,qntd in quadra.items():
+            soma += ndado*qntd
         return soma
     else:
         return 0
