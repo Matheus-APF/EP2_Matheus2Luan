@@ -51,3 +51,24 @@ def calcula_pontos_sequencia_baixa(dados):
         return 15
     else:
         return 0
+def calcula_pontos_sequencia_alta(dados):
+    um = dois = tres = quatro = cinco = seis = False
+    for i in dados:
+        if i == 1:
+            um =  True
+        elif i == 2:
+            dois = True
+        elif i == 3:
+            tres = True
+        elif i == 4:
+            quatro = True
+        elif i == 5:
+            cinco = True
+        else:
+            seis = True
+    if um == True and dois == True and tres == True and quatro == True and cinco == True:
+        return 30
+    elif dois == True and tres == True and quatro == True and cinco == True and seis ==True:
+        return 30
+    else:
+        return 0
