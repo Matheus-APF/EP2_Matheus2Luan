@@ -119,6 +119,7 @@ def calcula_pontos_quadra(dados):
     #Cria váriaveis
     soma = 0
     quadra = {}
+    quadraa = False
     
     #Conta a quantidade de cada dado
     for dado in dados:
