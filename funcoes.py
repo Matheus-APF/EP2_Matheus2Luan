@@ -23,3 +23,8 @@ def calcula_pontos_regra_simples(dados_rolados):
     for categoria in range(1, 7):   # Verifica dados em cada categoria
         pontos[categoria] = dados_rolados.count(categoria) * categoria # Pontos: categoria * n° dados se enquadram nela(.count)
     return pontos
+def calcula_pontos_soma(dados):
+    soma = 0
+    for i in dados:
+        soma += i
+    return soma
