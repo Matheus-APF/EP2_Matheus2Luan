@@ -1,9 +1,9 @@
 import random
 def rolar_dados(vezes):
-    dados = []
-    for i in range(vezes):
-        dado = random.randint(1,6)
-        dados.append(dado)
+    dados = []                       #Estoque dos dados
+    for i in range(vezes):           #Rola o dado o numero de vezes requisitada
+        dado = random.randint(1,6)   #Rola o dado
+        dados.append(dado)           #Armazena o valor no Estoque
     return dados
 
 def guardar_dado(rolados, estoque, i_guarda):
@@ -28,3 +28,24 @@ def calcula_pontos_soma(dados):
     for i in dados:
         soma += i
     return soma
+def calcula_pontos_sequencia_baixa(dados):
+    if dados.find(1) != -1:
+        um = True
+    if dados.find(2) !=-1:
+        dois = True
+    if dados.find(3) != -1:
+        tres = True
+    if dados.find(4) != -1:
+        quatro = True
+    if dados.find(5) != -1:
+        cinco = True
+    if dados.find(6) != -1:
+        seis = True
+    if um == True and dois == True and tres == True and quatro == True:
+        return 15
+    elif dois == True and tres == True and quatro == True and cinco == True:
+        return 15
+    elif tres == True and quatro == True and cinco == True and seis == True:
+        return 15
+    else:
+        return 0
