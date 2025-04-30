@@ -161,7 +161,7 @@ def calcula_pontos_quina(dados):
     # Fim do fluxo --> Não há quina --> Retorna 0
     return 0
 
-#11
+# 11
 def calcula_pontos_regra_avancada(dices):
     pontuacoes = {}
     pontuacoes["cinco_iguais"] = calcula_pontos_quina(dices)
@@ -172,3 +172,18 @@ def calcula_pontos_regra_avancada(dices):
     pontuacoes["sequencia_baixa"] = calcula_pontos_sequencia_baixa(dices)
 
     return pontuacoes
+
+# 12
+def faz_jogada(dados, categoria, cartela):
+
+    # Verifica se a categoria se enquadra na regra simples
+    if len(categoria) == 1:        # String com um numero apenas enquadra essa categoria (ex: 1, 2, 5, 6)
+        # Calcula os pontos para a categoria simples
+        pontos = calcula_pontos_regra_simples(dados)
+        cartela['regra_simples'][categoria] = pontos[int(categoria)]
+    else:
+        # Calcula os pontos para a categoria avançada
+        pontos = calcula_pontos_regra_avancada(dados)
+        cartela['regra_avancada'][categoria] = pontos[categoria]
+    return cartela
+
