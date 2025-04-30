@@ -29,18 +29,19 @@ def calcula_pontos_soma(dados):
         soma += i
     return soma
 def calcula_pontos_sequencia_baixa(dados):
-    if dados.find(1) != -1:
-        um = True
-    if dados.find(2) !=-1:
-        dois = True
-    if dados.find(3) != -1:
-        tres = True
-    if dados.find(4) != -1:
-        quatro = True
-    if dados.find(5) != -1:
-        cinco = True
-    if dados.find(6) != -1:
-        seis = True
+    for i in dados:
+        if i == 1:
+            um =  True
+        elif i == 2:
+            dois = True
+        elif i == 3:
+            tres = True
+        elif i == 4:
+            quatro = True
+        elif i == 5:
+            cinco = True
+        else:
+            seis = True
     if um == True and dois == True and tres == True and quatro == True:
         return 15
     elif dois == True and tres == True and quatro == True and cinco == True:
